@@ -5,7 +5,6 @@ The scripts focus on practical tasks commonly needed in real-world projects such
 
 Most scripts are intentionally lightweight and can be copied directly into your own project with minimal modification.
 
----
 
 # Available Features
 
@@ -17,23 +16,26 @@ This repository contains useful scripts related to dataset preparation and manag
 * [LabelMe to YOLO Conversion](#labelme-to-yolo-conversion)
 * [Visualization of YOLO Annotations](#visualize-yolo-annotations)
 
----
-
 ## Model Evaluation and Metrics
 
 This repository contains useful scripts related to calculation and evaluation for Ultralytics models:
 
 * [YOLO K-Fold Evaluation](#yolo-k-fold-evaluation)
 
----
-
 ## Model Training
 
 This repository contains useful scripts related to model training:
 
 * [YOLO K-Fold Training](#yolo-k-fold-training)
+- [Pruning with NVIDIA ModelOpt](#Pruning-with-NVIDIA-ModelOpt)
+- [Training with weighted dataset](#Training-with-weighted-dataset)
 
----
+## Model Inference 
+
+This repository contains useful scripts related to **model inference** using Ultralytics YOLO models.
+
+* [Tracking With Reid](#Tracking-With-Reid)
+
 
 ## Model Explainability
 
@@ -41,7 +43,6 @@ This repository contains useful scripts related to model interpretability and ex
 
 * [Multi-Layer EigenCAM](#multi-layer-eigencam)
 
----
 
 # Usage
 
@@ -53,13 +54,6 @@ In most cases, you can use them by:
 2. Adjusting paths and parameters
 3. Running the script
 
-```bash
-python script_name.py
-```
-
-No installation as a package is required.
-
----
 
 # Development Status
 
@@ -71,7 +65,6 @@ No installation as a package is required.
 
 Use the scripts as utilities and adapt them as needed for your specific project.
 
----
 
 # Future Improvements
 
@@ -89,7 +82,6 @@ This design keeps them flexible but may result in some code duplication.
 
 A more structured architecture may be introduced in future versions.
 
----
 
 # Philosophy
 
@@ -101,8 +93,6 @@ This repository prioritizes:
 * Engineering workflow support
 
 The goal is not to build a framework, but to provide reliable building blocks for real projects.
-
----
 
 # License
 
