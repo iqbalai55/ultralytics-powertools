@@ -194,14 +194,7 @@ Meaning:
 The model will be pruned to approximately 66% of the original FLOPs
 ```
 
-Here is a **single-file CLI training script** for your **Weighted Dataset sampling** implementation.
-It keeps your logic intact, makes it reusable, and exposes configurable parameters like **model**, **dataset**, **epochs**, etc.
-
-This is structured like a typical production training utility (similar style to your k-fold and pruning scripts).
-
 # Training with weighted dataset
-
-
 
 ## Basic
 
