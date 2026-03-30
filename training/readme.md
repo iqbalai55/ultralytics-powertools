@@ -145,6 +145,18 @@ This training script supports **automatic structured pruning** using **NVIDIA Mo
 
 The model is pruned based on **FLOPs constraints**, then training continues normally using the pruned architecture.
 
+## Important 
+
+One limitation when using NVIDIA ModelOpt is that the optimized model cannot be pickled.
+This can cause issues because Ultralytics normally saves the entire model object using pickle.
+
+To address this, a custom Ultralytics branch was created that simplifies saving and loading models optimized with ModelOpt.
+
+Install it using:
+
+```bash
+pip install git+https://github.com/ultralytics/ultralytics@qat-nvidia
+```
 
 ## Basic Usage
 
