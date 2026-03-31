@@ -5,6 +5,46 @@ from pathlib import Path
 from ultralytics import YOLO
 
 
+# --------------------------------------------------
+# Embedded BoT-SORT YAML
+# --------------------------------------------------
+
+BOTSORT_YAML = """
+# Ultralytics 🚀 AGPL-3.0 License
+
+tracker_type: botsort
+track_high_thresh: 0.25
+track_low_thresh: 0.1
+new_track_thresh: 0.25
+
+track_buffer: 15
+match_thresh: 0.8
+fuse_score: True
+
+gmc_method: sparseOptFlow
+
+proximity_thresh: 0.5
+appearance_thresh: 0.8
+
+with_reid: True
+model: auto
+"""
+
+
+def ensure_tracker_file(path: str) -> str:
+    """
+    Ensure tracker YAML exists.
+    If not, create it from embedded config.
+    """
+
+    tracker_path = Path(path)
+
+    if not tracker_path.exists():
+        tracker_path.write_text(BOTSORT_YAML.strip())
+
+    return str(tracker_path)
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Universal YOLO Tracking CLI with output return"
@@ -73,6 +113,12 @@ def parse_args():
 def main():
     args = parse_args()
 
+    # --------------------------------------------------
+    # Ensure tracker YAML exists
+    # --------------------------------------------------
+
+    args.tracker = ensure_tracker_file(args.tracker)
+
     model = YOLO(args.model)
 
     results = model.track(
@@ -95,7 +141,10 @@ def main():
     output_file = None
 
     if save_dir and save_dir.exists():
-        videos = list(save_dir.glob("*.mp4")) + list(save_dir.glob("*.avi"))
+        videos = (
+            list(save_dir.glob("*.mp4"))
+            + list(save_dir.glob("*.avi"))
+        )
 
         if videos:
             output_file = videos[0]
@@ -110,10 +159,9 @@ def main():
         )
 
         output_file.rename(output_path)
-
         output_file = output_path
 
-    # Print / return output
+    # Print output
     if output_file:
         print(f"OUTPUT_FILE={output_file.resolve()}")
     else:
