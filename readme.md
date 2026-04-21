@@ -12,36 +12,37 @@ Most scripts are intentionally lightweight and can be copied directly into your 
 
 This repository contains useful scripts related to dataset preparation and management:
 
-* [YOLO Dataset Splitter](#yolo-dataset-splitter)
-* [LabelMe to YOLO Conversion](#labelme-to-yolo-conversion)
-* [Visualization of YOLO Annotations](#visualize-yolo-annotations)
+* [YOLO Dataset Splitter](dataset/readme.md#yolo-dataset-splitter)
+* [LabelMe to YOLO Conversion](dataset/readme.md#labelme-to-yolo-conversion)
+* [Visualization of YOLO Annotations](dataset/readme.md#visualize-yolo-annotations)
 
 ## Model Evaluation and Metrics
 
 This repository contains useful scripts related to calculation and evaluation for Ultralytics models:
 
-* [YOLO K-Fold Evaluation](#yolo-k-fold-evaluation)
+* [YOLO K-Fold Evaluation](metric_calculation/readme.md#yolo-k-fold-evaluation)
+- [YOLO Benchmark Summary](metric_calculation/readme.md#YOLO-Benchmark-Summary)
 
 ## Model Training
 
 This repository contains useful scripts related to model training:
 
-* [YOLO K-Fold Training](#yolo-k-fold-training)
-- [Pruning with NVIDIA ModelOpt](#Pruning-with-NVIDIA-ModelOpt)
-- [Training with weighted dataset](#Training-with-weighted-dataset)
+* [YOLO K-Fold Training](training/readme.md#yolo-k-fold-training)
+- [Pruning with NVIDIA ModelOpt](training/readme.md#Pruning-with-NVIDIA-ModelOpt)
+- [Training with weighted dataset](training/readme.md#Training-with-weighted-dataset)
 
 ## Model Inference 
 
 This repository contains useful scripts related to **model inference** using Ultralytics YOLO models.
 
-* [Tracking With Reid](#Tracking-With-Reid)
+* [Tracking With Reid](inference/readme.md#Tracking-With-Reid)
 
 
 ## Model Explainability
 
 This repository contains useful scripts related to model interpretability and explainability:
 
-* [Multi-Layer EigenCAM](#multi-layer-eigencam)
+* [Multi-Layer EigenCAM](xai/readme.md#multi-layer-eigencam)
 
 
 # Usage
